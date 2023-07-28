@@ -28,6 +28,6 @@ void UBTTask_DEATH::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemor
 	{
 		OwnerComp.GetAIOwner()->Destroy();
 	}
-
+	//123
 }
 
