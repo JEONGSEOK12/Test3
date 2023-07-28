@@ -26,7 +26,7 @@ void UBTTask_DEATH::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemor
 	DTime += DelataSeconds;
 	if (DTime > 1.5f)
 	{
-		OwnerComp.GetAIOwner()->Destroy();
+		OwnerComp.GetAIOwner()->GetPawn()->Destroy();
 	}
 	//123
 }
