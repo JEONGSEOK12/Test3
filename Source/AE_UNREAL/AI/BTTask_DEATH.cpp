@@ -33,7 +33,7 @@ void UBTTask_DEATH::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemor
 	AMonster* MonMon = Cast<AMonster>(MonPawn);
 	MonMon->DeathTime += DelataSeconds;
 
-	if (MonMon->DeathTime > 1.5f)
+	if (MonMon->DeathTime > 1.2f)
 	{
 		OwnerComp.GetAIOwner()->GetPawn()->Destroy();
 	}
