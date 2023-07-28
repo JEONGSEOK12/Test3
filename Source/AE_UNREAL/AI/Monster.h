@@ -19,6 +19,8 @@ class AE_UNREAL_API AMonster : public AAICharacter
 	const struct FMonsterData* CurMonsterData;
 
 	void BeginPlay() override;
+public:
+	float DeathTime = 0;
 
 private:
 	UPROPERTY(Category = "Animation", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))

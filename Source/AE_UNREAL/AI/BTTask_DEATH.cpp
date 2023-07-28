@@ -2,6 +2,7 @@
 
 
 #include "AI/BTTask_DEATH.h"
+#include "Monster.h"
 
 // 1. 몬스터 죽는 애니메이션을 끝나면 화면에서 완전히 사라져야 합니다.
 
@@ -24,7 +25,15 @@ EBTNodeResult::Type UBTTask_DEATH::ExecuteTask(UBehaviorTreeComponent& OwnerComp
 void UBTTask_DEATH::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DelataSeconds)
 {
 	DTime += DelataSeconds;
-	if (DTime > 1.5f)
+
+
+	GetBlackboardComponent(OwnerComp)->GetValueAsFloat(TEXT("deathtime"));
+
+	APawn* MonPawn = OwnerComp.GetAIOwner()->GetPawn();
+	AMonster* MonMon = Cast<AMonster>(MonPawn);
+	MonMon->DeathTime += DelataSeconds;
+
+	if (MonMon->DeathTime > 1.5f)
 	{
 		OwnerComp.GetAIOwner()->GetPawn()->Destroy();
 	}

@@ -25,4 +25,6 @@ void AMonster::BeginPlay()
 	GetBlackboardComponent()->SetValueAsString(TEXT("TargetTag"), TEXT("Player"));
 	GetBlackboardComponent()->SetValueAsFloat(TEXT("SearchRange"), 1500.0f);
 	GetBlackboardComponent()->SetValueAsFloat(TEXT("AttackRange"), 200.0f);
+	GetBlackboardComponent()->SetValueAsFloat(TEXT("deathtime"), 0.0f);
+	
 }
